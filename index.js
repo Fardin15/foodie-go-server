@@ -62,9 +62,9 @@ async function run() {
       const filter = {};
 
       // Handle category filtering
-      // if (category && category !== "all") {
-      //   filter.category = category;
-      // }
+      if (category && category !== "all") {
+        filter.category = category;
+      }
       // Handle brand filtering
       // if (brand) filter.brand = brand;
       // Handle search filtering
