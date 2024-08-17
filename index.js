@@ -66,9 +66,9 @@ async function run() {
         filter.category = category;
       }
       // Handle brand filtering
-      // if (brand) filter.brand = brand;
+      if (brand) filter.brand = brand;
       // Handle search filtering
-      // if (search) filter.productName = { $regex: search, $options: "i" };
+      if (search) filter.productName = { $regex: search, $options: "i" };
 
       // Handle price range filtering
       // if (minPrice || maxPrice) {
