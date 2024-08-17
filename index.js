@@ -56,10 +56,10 @@ async function run() {
       } = req.query;
 
       // pagination
-      // const skip = (page - 1) * limit;
-      // const sortOrder = order === "asc" ? 1 : -1;
+      const skip = (page - 1) * limit;
+      const sortOrder = order === "asc" ? 1 : -1;
 
-      // const filter = {};
+      const filter = {};
 
       // Handle category filtering
       // if (category && category !== "all") {
