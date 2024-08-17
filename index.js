@@ -42,56 +42,56 @@ async function run() {
     });
 
     // get api for products
-    // app.get("/products", async (req, res) => {
-    //   const {
-    //     page = 1,
-    //     limit = 8,
-    //     sortBy = "price",
-    //     order = "asc",
-    //     search = "",
-    //     category,
-    //     brand,
-    //     minPrice,
-    //     maxPrice,
-    //   } = req.query;
+    app.get("/products", async (req, res) => {
+      const {
+        page = 1,
+        limit = 8,
+        sortBy = "price",
+        order = "asc",
+        search = "",
+        category,
+        brand,
+        minPrice,
+        maxPrice,
+      } = req.query;
 
-    //   // pagination
-    //   const skip = (page - 1) * limit;
-    //   const sortOrder = order === "asc" ? 1 : -1;
+      // pagination
+      // const skip = (page - 1) * limit;
+      // const sortOrder = order === "asc" ? 1 : -1;
 
-    //   const filter = {};
+      // const filter = {};
 
-    //   // Handle category filtering
-    //   if (category && category !== "all") {
-    //     filter.category = category;
-    //   }
-    //   // Handle brand filtering
-    //   if (brand) filter.brand = brand;
-    //   // Handle search filtering
-    //   if (search) filter.productName = { $regex: search, $options: "i" };
+      // Handle category filtering
+      // if (category && category !== "all") {
+      //   filter.category = category;
+      // }
+      // Handle brand filtering
+      // if (brand) filter.brand = brand;
+      // Handle search filtering
+      // if (search) filter.productName = { $regex: search, $options: "i" };
 
-    //   // Handle price range filtering
-    //   if (minPrice || maxPrice) {
-    //     filter.price = {};
-    //     if (minPrice) filter.price.$gte = parseFloat(minPrice);
-    //     if (maxPrice) filter.price.$lte = parseFloat(maxPrice);
-    //   }
+      // Handle price range filtering
+      // if (minPrice || maxPrice) {
+      //   filter.price = {};
+      //   if (minPrice) filter.price.$gte = parseFloat(minPrice);
+      //   if (maxPrice) filter.price.$lte = parseFloat(maxPrice);
+      // }
 
-    //   const products = await productsCollection
-    //     .find(filter)
-    //     .sort({ [sortBy]: sortOrder })
-    //     .skip(skip)
-    //     .limit(parseInt(limit))
-    //     .toArray();
+      // const products = await productsCollection
+      //   .find(filter)
+      //   .sort({ [sortBy]: sortOrder })
+      //   .skip(skip)
+      //   .limit(parseInt(limit))
+      //   .toArray();
 
-    //   const total = await productsCollection.countDocuments(filter);
+      // const total = await productsCollection.countDocuments(filter);
 
-    //   res.json({
-    //     totalPages: Math.ceil(total / limit),
-    //     currentPage: parseInt(page),
-    //     products,
-    //   });
-    // });
+      // res.json({
+      //   totalPages: Math.ceil(total / limit),
+      //   currentPage: parseInt(page),
+      //   products,
+      // });
+    });
 
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
