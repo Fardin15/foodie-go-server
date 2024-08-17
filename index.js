@@ -77,20 +77,20 @@ async function run() {
         if (maxPrice) filter.price.$lte = parseFloat(maxPrice);
       }
 
-      // const products = await productsCollection
-      //   .find(filter)
-      //   .sort({ [sortBy]: sortOrder })
-      //   .skip(skip)
-      //   .limit(parseInt(limit))
-      //   .toArray();
+      const products = await productsCollection
+        .find(filter)
+        .sort({ [sortBy]: sortOrder })
+        .skip(skip)
+        .limit(parseInt(limit))
+        .toArray();
 
-      // const total = await productsCollection.countDocuments(filter);
+      const total = await productsCollection.countDocuments(filter);
 
-      // res.json({
-      //   totalPages: Math.ceil(total / limit),
-      //   currentPage: parseInt(page),
-      //   products,
-      // });
+      res.json({
+        totalPages: Math.ceil(total / limit),
+        currentPage: parseInt(page),
+        products,
+      });
     });
 
     // Send a ping to confirm a successful connection
