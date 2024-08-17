@@ -71,11 +71,11 @@ async function run() {
       if (search) filter.productName = { $regex: search, $options: "i" };
 
       // Handle price range filtering
-      // if (minPrice || maxPrice) {
-      //   filter.price = {};
-      //   if (minPrice) filter.price.$gte = parseFloat(minPrice);
-      //   if (maxPrice) filter.price.$lte = parseFloat(maxPrice);
-      // }
+      if (minPrice || maxPrice) {
+        filter.price = {};
+        if (minPrice) filter.price.$gte = parseFloat(minPrice);
+        if (maxPrice) filter.price.$lte = parseFloat(maxPrice);
+      }
 
       // const products = await productsCollection
       //   .find(filter)
