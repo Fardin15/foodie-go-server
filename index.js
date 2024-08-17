@@ -36,10 +36,10 @@ async function run() {
     const categoryCollection = client.db("mhStoreDb").collection("category");
 
     // get api for category
-    // app.get("/category", async (req, res) => {
-    //   const result = await categoryCollection.find().toArray();
-    //   res.send(result);
-    // });
+    app.get("/category", async (req, res) => {
+      const result = await categoryCollection.find().toArray();
+      res.send(result);
+    });
 
     // get api for products
     // app.get("/products", async (req, res) => {
